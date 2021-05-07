@@ -15,7 +15,12 @@ class CarsController extends Controller
     public function index()
     {
         // Select * from cars
-        $cars = Car::all();
+        $cars = Car::all()->toArray();
+        // $cars = Car::all()->toJson();
+        // $cars = json_decode($cars);
+        echo '<pre>';
+        var_dump($cars);
+        echo '</pre>';
         // $cars = Car::where('name',  '=', 'Audi')
             // ->get();
             // ->firstOrFail();
@@ -79,7 +84,7 @@ class CarsController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
