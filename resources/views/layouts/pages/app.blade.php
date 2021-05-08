@@ -22,14 +22,14 @@
 
 <body>
     <header>
-        @include('layouts.header')
+        @include('layouts.pages.header')
     </header>
 
     @yield('content')
 
     <!-- Footer -->
     <footer>
-        @include('layouts.footer')
+        @include('layouts.pages.footer')
     </footer>
 </body>
 </html>

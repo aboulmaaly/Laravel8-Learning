@@ -19,7 +19,12 @@ class Car extends Model
 
     protected $fillable = ['name', 'founded', 'description'];
 
-    protected $hidden = ['password', 'remember_token'];
+    // protected $hidden = ['password', 'remember_token'];
 
-    protected $visible = ['id', 'name', 'founded', 'description'];
+    // protected $visible = ['id', 'name', 'founded', 'description'];
+
+    public function carmodels() 
+    {
+        return $this->hasMany(CarModel::class);
+    }
 }
