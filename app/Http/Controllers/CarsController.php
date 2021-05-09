@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Car;
+use App\Models\Product;
 
 class CarsController extends Controller
 {
@@ -63,6 +64,8 @@ class CarsController extends Controller
         // $car->founded = $request->input('founded');
         // $car->description = $request->input('description');
         // $car->save();
+
+
         
         $car = Car::create([
         // $car = Car::make([
@@ -87,7 +90,11 @@ class CarsController extends Controller
     {
         // dd($id);
         $car = Car::find($id);
-        // var_dump($car->productionDate);
+        // echo '<pre>';
+        // var_dump($car->products);
+        // echo '</pre>';
+        $products = Product::find($id);
+
         return view('cars.show')->with('car', $car);
     }
 

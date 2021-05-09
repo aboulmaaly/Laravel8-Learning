@@ -36,7 +36,7 @@ class Car extends Model
     public function engines()
     {
         return $this->hasManyThrough(
-                        Engines::class, 
+                        Engine::class, 
                         CarModel::class,
                         'car_id', // Foreign key on CarModel table
                         'model_id', // Foreign key on Engine table
@@ -51,5 +51,10 @@ class Car extends Model
             'car_id',
             'model_id',
         );
+    }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class);
     }
 }

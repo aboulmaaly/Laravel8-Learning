@@ -47,6 +47,16 @@
                         <p>No car model found.</p>
                     @endforelse
                 </table>
+                <p class="text-left">
+                    Product types:
+                    @forelse ($car->products as $product)
+                        {{ $product->name }}
+                    @empty
+                        <p>
+                            No car product description
+                        </p>
+                    @endforelse
+                </p>
                 {{-- <ul>
                     <p class="text-lg text-gray-700 py-3">
                         @forelse ($car->carModels as $model)
