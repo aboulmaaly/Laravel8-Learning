@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Car;
 use App\Models\Product;
+use App\Rules\Uppercase;
 
 class CarsController extends Controller
 {
@@ -65,8 +66,14 @@ class CarsController extends Controller
         // $car->description = $request->input('description');
         // $car->save();
 
-
-        
+        $request->validate([
+            // 'name'        => 'required|unique:cars',
+            'name'        => new Uppercase,
+            'founded'     => 'required|integer|min:1800|max:2021',
+            'description' => 'required',
+        ]);
+        //  If it's valid, it will proceed
+        //  If it's not valid, throw a ValidationException
         $car = Car::create([
         // $car = Car::make([
             'name' => $request->input('name'),
