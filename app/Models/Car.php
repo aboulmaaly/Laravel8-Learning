@@ -17,7 +17,7 @@ class Car extends Model
 
     // protected $dateFormat = 'h:m:s';
 
-    protected $fillable = ['name', 'founded', 'description'];
+    protected $fillable = ['name', 'founded', 'description', 'image_path'];
 
     // protected $hidden = ['password', 'remember_token'];
 

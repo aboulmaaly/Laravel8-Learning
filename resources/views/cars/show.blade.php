@@ -9,6 +9,7 @@
         </div>
         <div class="text-center py-10">
             <div class="m-auto">
+                <img class="w-8/12 mb-8 shadow-xl m-auto" src="{{ asset('images/' . $car->image_path) }}" alt="{{ $car->name }}">
                 <span class="uppercase text-blue-500 font-bold text-xs italic">
                     Founded: {{ $car->founded }}
                 </span>
